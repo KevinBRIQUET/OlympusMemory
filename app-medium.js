@@ -30,6 +30,14 @@ function retourneCarte() {                          // 2A
     recommencerJeu();                               // 2H
 }
 
+// ------------------ Reintialisation ------------------ 
+
+function resetCartes() {
+    premiereCarte = null;
+    secondeCarte = null;
+    carteRetournee = false;
+    verouillage = false;
+}
 
 
 // ------------------ Vérifie la correspondance entre deux cartes -----------------------
@@ -52,7 +60,7 @@ function correspondance() {                                          // 3A
         setTimeout(() => {                                           // 3G
             premiereCarte.childNodes[1].classList.remove("active");
             secondeCarte.childNodes[1].classList.remove("active");
-
+            resetCartes();
             verouillage = false;                                     // 3H
         }, 1500);
     }
