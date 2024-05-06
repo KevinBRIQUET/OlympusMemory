@@ -1,11 +1,11 @@
 
-const cartes = document.querySelectorAll(".carte");  // 1A 
-let carteRetournee = false;                          // 1B
-let premiereCarte, secondeCarte;                     // 1C
-let verouillage = false;                             // 1D
-let cartesVisibles = [];                             // 1E
-let veutRejouer;                                     // 1F
-cartes.forEach((carte) => {                          // 1G
+const cartes = document.querySelectorAll(".carte");  // 1A - Séléctionne tout les éléments .carte et les stocks dans un NodeList
+let carteRetournee = false;                          // 1B - Déclare la variable carteRetournée 
+let premiereCarte, secondeCarte;                     // 1C - Déclare la variable premièreCarte et secondeCarte 
+let verouillage = false;                             // 1D - Déclare la variable vérouillage (bloquer le jeu temporairement)
+let cartesVisibles = [];                             // 1E - Déclare carteVisibles et l'initialise dans un tableau vide (pour stocker les cartes retourné plus tard)
+let veutRejouer;                                     // 1F - Déclare la variable veutRejouer
+cartes.forEach((carte) => {                          // 1G 
     carte.addEventListener("click", retourneCarte);
 });
 
@@ -13,11 +13,11 @@ cartes.forEach((carte) => {                          // 1G
 // ----------------- Retourner la carte ----------------------
 
 
-function retourneCarte() {                          // 2A 
+function retourneCarte() {                          // 2A - Déclare la fonction retourneCarte qui est appelé à chaque fois qu'on clic sur une carte
 
-    if (verouillage) return;                        // 2B
-    if (this === premiereCarte) return;             // 2C
-    this.childNodes[1].classList.toggle("active");  // 2D           
+    if (verouillage) return;                        // 2B - Empêche le joueur de retourner d'autres cartes quand 2 cartes non paire sont déjà visible 
+    if (this === premiereCarte) return;             // 2C - Empêche le joueur de cliquez deux fois sur la même carte
+    this.childNodes[1].classList.toggle("active");  // 2D             
     if (!carteRetournee) {                          // 2E
         carteRetournee = true;
         premiereCarte = this;

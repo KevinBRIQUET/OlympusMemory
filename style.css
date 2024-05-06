@@ -1,15 +1,26 @@
 @font-face {
-    font-family: 'Diogenes';                                /* importer sa propre police d'écriture */
-    src: url('ressources/DIOGENES.ttf') format('truetype'); /* Chemin vers le fichier de police */
+    font-family: 'Diogenes';                                
+    src: url('ressources/DIOGENES.ttf') format('truetype'); 
 }
 
 
 body {
     font-family: 'Diogenes', sans-serif;
-    background-size: cover;                         
+    background-size: cover;    
     background-position: center;                    
     background-repeat: no-repeat;  
 }
+
+
+/* ajuster le fond d'écran pour un grand écran */
+
+@media screen and (min-width: 1800px) {
+    body {
+        background-size: 110% auto; 
+    }
+}
+
+
 
 body.easy {
     background-image: url('ressources/ville.webp');
@@ -56,6 +67,12 @@ h2 {
     margin: 50px 0px 0px 385px;
 }
 
+@media screen and (min-width: 1800px) {
+    .grille_facile {
+        margin: 50px 0px 0px 545px;
+    }
+}
+
 
 .grille_medium {                       
 
@@ -63,13 +80,25 @@ h2 {
     margin: 0px 0px 0px 380px;  
 }
 
+@media screen and (min-width: 1800px) {
+    .grille_medium {
+        margin: 50px 0px 0px 585px;
+    }
+}
+
+
+
 .grille_hard{                       
 
     grid-template: repeat(4, 140px) / repeat(6, 140px); 
     margin: 0px 0px 0px 335px;  
 }
 
-
+@media screen and (min-width: 1800px) {
+    .grille_hard {
+        margin: 50px 0px 0px 515px;
+    }
+}
 
 .carte {
     margin: 5px;
@@ -138,12 +167,21 @@ h2 {
     height: 250px;
 }
 
+@media screen and (min-width: 1800px) {
+    .retour {
+        position: absolute;
+        top: 660px;
+        width: 250px;
+        height: 250px;
+    }
+}
+
+
 .poterie {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 0px 0px 0px 150px;
-
 }
 .image-poterie {
     text-align: center;
@@ -159,3 +197,9 @@ h2 {
     color: red;
     font-size: 50px;
 }
+
+.titre-level {
+
+    padding-right: 76px;
+}
+
